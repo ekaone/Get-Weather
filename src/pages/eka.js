@@ -1,0 +1,34 @@
+import React from "react";
+
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import dogIllustration from "../images/dog-illustration.svg";
+
+function EkaPage() {
+  return (
+    <Layout>
+      <SEO
+        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+        title="About"
+      />
+
+      <section className="flex flex-col items-center md:flex-row">
+        <div className="md:w-2/3 md:mr-8">
+          <blockquote className="pl-4 font-serif leading-loose text-justify border-l-4 border-gray-900 text-pink-700">
+            Eka
+          </blockquote>
+
+          <cite className="block mt-4 text-xs font-bold text-right uppercase text-green-700">
+            – Thomas Nagel
+          </cite>
+        </div>
+
+        <figure className="w-2/3 md:w-1/3">
+          <img alt="A dog relaxing" src={dogIllustration} />
+        </figure>
+      </section>
+    </Layout>
+  );
+}
+
+export default EkaPage;
