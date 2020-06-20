@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Select from "react-select";
 
 import flagDefault from "../images/flag-id.svg";
 import Layout from "../components/layout";
@@ -6,13 +7,25 @@ import SEO from "../components/seo";
 import ButtonCity from "../components/button";
 import Card from "../components/card";
 import { Cities } from "../components/cities";
+import { countries } from "../components/countries";
 
 function Weather() {
   const [data, setData] = useState([]);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const options = [
+    { value: "chocolate", label: "Chocolate" },
+    { value: "strawberry", label: "Strawberry" },
+    { value: "vanilla", label: "Vanilla" }
+  ];
 
   useEffect(() => {
     console.log(data);
   }, [data]);
+
+  const handleChange = selectedOption => {
+    setSelectedOption(selectedOption);
+    console.log(selectedOption);
+  };
 
   const handleGetCity = cityName => {
     // const API_KEY = "a2ee8a5d1126c3c56900dd030534e9e0";
@@ -49,8 +62,8 @@ function Weather() {
   return (
     <Layout>
       <SEO
-        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-        title="Weather"
+        keywords={[`weather`, `city`, `eka`, `prasetia`]}
+        title="Get Weather"
       />
       <div className="flex flex-col">
         <div>
@@ -68,6 +81,13 @@ function Weather() {
               city="Malaysia"
             />
           </blockquote>
+        </div>
+        <div className="mt-2">
+          <Select
+            value={selectedOption}
+            onChange={handleChange}
+            options={countries}
+          />
         </div>
         <div className="text-gray-700 text-center px-4 py-2 m-2">
           <ShowCity />
