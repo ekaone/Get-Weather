@@ -8,6 +8,7 @@ const tailwindConfig = require("./tailwind.config.js");
 const fullConfig = resolveConfig(tailwindConfig);
 
 module.exports = {
+  pathPrefix: "/Get-Weather",
   siteMetadata: {
     title: `Weather City`,
     description: `Get city weather from around the world`,
