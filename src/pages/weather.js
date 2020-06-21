@@ -28,7 +28,7 @@ function Weather() {
   };
 
   const handleGetCity = cityName => {
-    // const API_KEY = "a2ee8a5d1126c3c56900dd030534e9e0";
+    // const API_KEY = "";
     const API_KEY = process.env.WEATHER_KEY;
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}`;
 
