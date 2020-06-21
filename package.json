@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-tailwind",
-  "description": "Gatsby starter styled with Tailwind",
-  "version": "4.0.0",
-  "author": "Taylor Bryant <taylor@bryant.io>",
+  "name": "get-weather",
+  "description": "Gatsby get Weather around the world",
+  "version": "1.0.0",
+  "author": "Eka Prasetia <@dannyeka>",
   "dependencies": {
     "dotenv": "^8.2.0",
     "gatsby": "2.21.30",
@@ -19,9 +19,9 @@
   },
   "keywords": [
     "gatsby",
-    "tailwind",
-    "tailwindcss",
-    "purgecss"
+    "dannyeka",
+    "eka",
+    "prasetia"
   ],
   "license": "MIT",
   "scripts": {
@@ -43,9 +43,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/taylorbryant/gatsby-starter-tailwind"
+    "url": "https://github.com/ekaone/Get-Weather"
   },
   "bugs": {
-    "url": "https://github.com/taylorbryant/gatsby-starter-tailwind/issues"
+    "url": "https://github.com/ekaone/Get-Weather/issues"
   }
 }
