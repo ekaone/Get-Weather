@@ -15,27 +15,27 @@ function Weather() {
   const options = [
     { value: "chocolate", label: "Chocolate" },
     { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" }
+    { value: "vanilla", label: "Vanilla" },
   ];
 
   useEffect(() => {
     console.log(data);
   }, [data]);
 
-  const handleChange = selectedOption => {
+  const handleChange = (selectedOption) => {
     setSelectedOption(selectedOption);
+
     console.log(selectedOption);
   };
 
-  const handleGetCity = cityName => {
-    // const API_KEY = "";
-    const API_KEY = process.env.WEATHER_KEY;
+  const handleGetCity = (cityName) => {
+    const API_KEY = process.env.GATSBY_WEATHER_KEY;
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}`;
 
     fetch(url)
-      .then(response => response.json())
-      .then(json => setData(json))
-      .catch(error => error);
+      .then((response) => response.json())
+      .then((json) => setData(json))
+      .catch((error) => error);
   };
 
   const ShowCity = () => {
@@ -50,7 +50,7 @@ function Weather() {
           flag={
             data.length === 0
               ? flagDefault
-              : Cities.find(f => (f.name === data.name ? f.flag : null)).flag
+              : Cities.find((f) => (f.name === data.name ? f.flag : null)).flag
           }
         />
       );

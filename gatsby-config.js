@@ -1,6 +1,9 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`
-});
+// require("dotenv").config({
+//   path: `.env.${process.env.WEATHER_KEY}`,
+// });
+// require("dotenv").config({
+//   path: `${process.env.NODE_ENV}`,
+// });
 
 const resolveConfig = require("tailwindcss/resolveConfig");
 const tailwindConfig = require("./tailwind.config.js");
@@ -12,7 +15,7 @@ module.exports = {
   siteMetadata: {
     title: `Weather City`,
     description: `Get city weather from around the world`,
-    author: `@dannyeka`
+    author: `@dannyeka`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -25,8 +28,8 @@ module.exports = {
         background_color: fullConfig.theme.colors.white,
         theme_color: fullConfig.theme.colors.teal["400"],
         display: `minimal-ui`,
-        icon: `src/images/icon-me.png`
-      }
+        icon: `src/images/icon-me.png`,
+      },
     },
     {
       resolve: `gatsby-plugin-postcss`,
@@ -34,10 +37,12 @@ module.exports = {
         postCssPlugins: [
           require(`tailwindcss`)(tailwindConfig),
           // require(`autoprefixer`),
-          ...(process.env.NODE_ENV === `production` ? [require(`cssnano`)] : [])
-        ]
-      }
+          ...(process.env.NODE_ENV === `production`
+            ? [require(`cssnano`)]
+            : []),
+        ],
+      },
     },
-    `gatsby-plugin-offline`
-  ]
+    `gatsby-plugin-offline`,
+  ],
 };
