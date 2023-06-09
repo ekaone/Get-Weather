@@ -5,7 +5,7 @@
   "author": "Eka Prasetia <@dannyeka>",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "gatsby": "2.21.30",
+    "gatsby": "4.25.7",
     "gatsby-plugin-manifest": "2.4.3",
     "gatsby-plugin-offline": "3.2.2",
     "gatsby-plugin-postcss": "2.3.1",
